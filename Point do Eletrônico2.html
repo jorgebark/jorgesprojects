@@ -1,0 +1,400 @@
+<!doctype html> <!--Diz para o navegador que se trata de um documento HTML moderno-->
+<html lang="pt-br">
+    
+    <head>  <!--Cabeçalho: Contém elementos que ajudam o navegador a interpretar o site, porém ainda não é o 
+        que o usuário ve (exceto o Title)-->
+        <meta charset="utf-8"> <!--Indica ao navegador que ele vai ler um texto em letras comuns ao invés de 
+        símbolos-->
+        
+            
+        <style>
+
+            /* Assim se comenta a linha em css. Tudo o que estiver na tag style se refere ao css.
+            O css pode (e deve) ser implementado depois que o html estiver pronto*/
+            h2 {
+                color: rgb(71, 113, 122) /*Tudo o que estiver em h2 ficará nessa cor*/   
+            }  
+
+                body {background-color: rgb(160, 207, 211) /*Tudo o que estiver na tag body ganha fundo na cor 
+                escolhida*/
+            
+            }
+
+            #introducao {
+                color: rgb(21, 6, 241); 
+                  
+                /*O sinal # indica que será usado o id ao invés da tag, pois assim se pode 
+                selecionar exatamente qual tag mudará de cor em caso de duas iguais*/
+
+                font-family: sans-serif;
+                font-style: italic;
+            }
+
+            .lista {
+                background-color: aquamarine;
+                font-family: 'Courier New', Courier, monospace;
+                 
+                /*O . indica que será usada uma classe ao invés da tag e do id, pois assim, pode-se personalizar 
+                determinados textos de uma mesma classe em diferentes lugares do código, uma vez que o id e a tag são
+                únicas para cada parte do testo*/
+                text-align: center;
+                line-height: 1.5em;
+                width: 25%;
+                text-decoration: underline;
+                margin-left: 500px;
+            }
+
+            #itens {
+                color:rgb(12, 6, 6)
+            }
+
+            table {
+                background-color: rgb(14, 210, 224);
+                font-family: monospace;
+                font-size: 1.5em;
+                font-style: oblique;
+                font-weight: bold;
+            }
+
+            a {
+                text-decoration: none; /*Por padrão, o navegador acrescenta linhas em alguns pontos específicos da página
+                como em links por exemplo, essa regra aplicada apenas ao css faz com que o navegador deixe esse padrão
+                de lado, sendo assim, o navegador passará a não sublinhar mais, ao menos que se aplique a regra 
+                text-decoration: underline, a qual faz com que apenas o texto escolhido fique sublinhado*/
+            }
+
+            #texto_final {
+                font-style: italic;
+                font-family: cursive;
+            }
+
+            .red {
+                color: red;
+            }
+
+            .blue {
+                color: rgb(63, 79, 226);
+            }
+
+            .green {
+                color: rgb(59, 233, 161)
+            }
+
+            #lo_1 {
+                font-size: 1.5em;
+                background-color: rgb(90, 195, 236);
+                width: 20%;
+                text-decoration: underline;
+                font-family: monospace;
+                font-style: oblique;
+                color: white; 
+            }
+
+            .usuario { background-color: blue; color:cornsilk; text-decoration: underline;
+                /**Colocando um sobrenome numa classe já existente, fará com que o css reconheça apenas o sobrenome para
+                que as regras sejam aplicadas. Isso pode ocorrer em casos onde você tenha classes com os mesmos nomes
+                atribuídos para uma melhor identificação dos itens dentro do código.**/
+            }
+            .explicacao {text-decoration: underline;
+                /**Seleciona todas as classes, mesmo que as tags estejam em diferentes lugares da página**/
+            }
+
+            p .redes {
+                background-color: darkmagenta;
+                color: darkseagreen;
+                /**Seleciona a tag específica dentro de um parágrafo. Para que eu tenha essa mesma formatação em algum
+                oarágrafo futuro, basta inserir a classe redes dentro de um parágrafo.**/
+            }
+            
+            .Botao_inscricao {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+
+            .botao{
+                position: relative;
+                display: block;
+                color: rgba(53, 23, 184, 0.822);
+                font-size: 12px;
+                font-family: "montserrat";
+                text-decoration: none;
+                margin: 30px 0;
+                border: 2px solid #3609d8;
+                padding: 14px 60px;
+                text-transform: uppercase;
+                overflow: hidden;
+                transition: 1s all ease;
+            }
+
+            .botao::before{
+                background: #3d3a3a;
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                z-index: -1;
+                transition: all 0.6s ease;
+            }
+
+            .inscricao{
+                background: #75efff;
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                z-index: -1;
+                transition: all 0.6s ease;
+            }
+
+            .inscricao::before{
+                 width: 0%;
+                 height: 100%;
+            }
+
+
+            .inscricao::before{
+
+                width: 100%;
+                height: 0%;
+                transform: translate(-50%,-50%) rotate(45deg);
+            }
+            .inscricao:hover::before{
+                height: 380%;
+            }
+            
+        </style>
+
+        <title>Point do Eletrônico</title> <!--Título da página a ser exibido na aba do navegador-->
+    </head> <!--Fecha o Cabeçalho: A partir daqui, será a parte visível ao usuário-->
+
+        <p id="inscricao">Inscreva-se</p> <p id="inscrito">Entre</p>
+    
+     <!-- <body>A partir daqui, começam o texto e a formatação da página em si-->
+                
+        <img id="Inicio" src="C:/Users/user/Downloads/Logo2.jpg" alt="Página Inicial" width="250" height="200"> 
+        
+        <!--Para colocar uma imagem no site, utiliza-se o img src.
+        O alt="legenda da foto" faz com que os e-readers descrevam a imagem para os portadores de necessidades 
+        visuais, porém essa legenda não aparecerá visivelmente na foto;
+        O width define o comprimento da imagem e o height define a altura da imagem-->
+        <!--A id aqui foi criada para que se tenha um link interno que redirecione o usuário para o início da
+        página como exeomplo de link interno. O link interno possui como objetivo auxiliar o usuário a encontrar
+        o que ele possa precisar quando estiver muito distante do tópico que possa ser relevante.-->
+        
+
+        <h1>Point do eletrônico</h1> <!--Aqui é o título principal da página-->
+        <h2>O seu eletrônico no ponto certo!</h2> <!--Título secundário, de menor relevância-->
+        <h2 id="introducao">Vasta linha de produtos e acessórios para você e seu escritório</h2>
+        <!--Cada numeração de título pode ser utilizada quantas vezes for necessário-->
+        <!--No caso acima, o id serve para que se possa escolher apenas o texto que deseja colorir caso existam 
+        dois tipos de texto com tags com o mesmo número, pois em tags com números diferentes, alteraria 
+        a relevância do texto-->
+
+        <p>Trabalhamos com as mais renomadas marcas no segmento. Tudo com qualidade, garantia e procedência!!!</p> 
+    
+        <!--Parágrafo: pode ser usado para descrição-->
+
+        <p id="sobre-nos">Um pouco sobre nós: 
+        
+            <!--o id sobre-nos é para ilustrar que em caso de espaço, deve-se usar hífen--> 
+            <strong>Começou com um sonho em empreender, com muios altos e baixos em vários ramos como 
+            artesanato, alimentação, confeitaria, todos levados ao fracasso por vários fatores, mas sempre com 
+            foco, fé e força, sem nunca desistir, em uma pequena cidade no litoral do Paraná (Paranaguá). <br> 
+        
+            <!--tag br indica ao navegador que ele deve mudar de linha depois dela, caso contrário
+            todo o site ficará em uma única linha-->
+            <br> Depois de uma série de acontecimentos, foi então decidido abrir uma assistência técnica, que em 
+            decorrência de motivos de força maior, seu sonhador e idealizador empreendedor se viu em uma necessidade e 
+            oportunidade de expandir seus negócios através das plataformas de vendas online. </strong>    
+         
+        <!--a tag em faz com que o 
+        navegador deixe todo o texto em itálico todo o texto dentro dela, enquanto a tag strong deixa o texto em 
+        negrito-->
+
+        <h1 class="lista"><strong> Linha de Produtos </strong></h1> <!--Aqui pode-se criar um título para a lista-->
+        <ul id="itens">
+            <li>Acessórios para Celular</li>
+            <li>Armazenamento</li>
+            <li>Escritório</li>
+        </ul> 
+    
+        <!--ul: lista desordenada, cada item da lista deve abrir e fechar com a tag li e cada item aparecerá em 
+        forma de parágrafo ao invés de ordem numérica.-->
+        <h1 class="lista">Nossos Produtos</h1> 
+    
+        <!--As classes servem para que se possa selecionar textos com a mesma tag em diferentes posições para uma 
+        mesma personalização, o que não é possível de ser feito com os id's-->
+        <ol>
+            <li>Capinhas</li>
+            <li>Películas de Vidro</li>
+            <li>Carregadores</li>
+            <li>Pendrives</li>
+            <li>iluminação</li>
+            <li>Ventilação</li> <!--A <div> cria um elemento em bloco, enquanto o span cria um elemento em linha-->
+        </ol> 
+    
+        <!--ol: lista ordenada, cada item da lista deve abrir e fechar com a tag li e cada item aparecerá em 
+        ordem numérica ao invés de parágrafo.-->
+
+        <table> <!--A tag table cria tabelas, assim como existem as tabelas no Excel-->
+            <thead> <!--a tag thead cria um cabeçalho para cada coluna-->
+                <tr> <!--Cria uma linha na tabela-->
+                    <th>Capinhas|</th> <!-- a tag th cria uma célula de cabeçalho-->
+                    <th>Películas de Vidro|</th>
+                    <th>Cabos e Carregadores|</th>
+                    <th>Pendrives|</th>
+                    <th>iluminação|</th>
+                    <th>Ventilação|</th>
+                </tr>    
+            </thead>
+
+            <tbody> <!--A tag tbody cria uma linha de dados-->
+                <tr> <!--Neste caso, a tr vai criar uma célula de dados-->
+                    <td>Modelo</td> <!--A tag td representa os dados da tabela-->
+                    <td>Modelo</td>
+                    <td>Tipo</td>
+                    <td>Capacidade</td>
+                    <td>Tipo de Uso</td>
+                    <td>Ventiladores</td>
+                </tr>
+
+                <tr> <!--Neste caso, a tr vai criar uma célula de dados-->
+                    <td>Apple</td> <!--A tag td representa os dados da tabela-->
+                    <td>Apple</td>
+                    <td>USB</td>
+                    <td>4GB</td>
+                    <td>Bocal</td>
+                    <td>Mini - Pilha</td>
+                </tr>
+
+                <tr> <!--Neste caso, a tr vai criar uma célula de dados-->
+                    <td>Lenovo</td> <!--A tag td representa os dados da tabela-->
+                    <td>Lenovo</td>
+                    <td>USB-C</td>
+                    <td>8GB - Musical</td>
+                    <td>Emergencial</td>
+                    <td>Mini - Tomada</td>
+                </tr>
+
+                <tr> <!--Neste caso, a tr vai criar uma célula de dados-->
+                    <td>LG</td> <!--A tag td representa os dados da tabela-->
+                    <td>LG</td>
+                    <td>USB - OTG</td>
+                    <td>16GB</td>
+                    <td>Lanternas</td>
+                    <td></td>
+                </tr> 
+                
+                <tr> <!--Neste caso, a tr vai criar uma célula de dados-->
+                    <td>Motorola</td> <!--A tag td representa os dados da tabela-->
+                    <td>Motorola</td>
+                    <td>Áudio e Vídeo RCA (A/V)</td>
+                    <td>16GB - Musical</td>
+                    <td>Lâmpada Fluorescente</td>
+                    <td></td>
+                </tr>
+
+                <tr> <!--Neste caso, a tr vai criar uma célula de dados-->
+                    <td>Samsung</td> <!--A tag td representa os dados da tabela-->
+                    <td>Samsung</td>
+                    <td>HDMI</td>
+                    <td></td>
+                    <td>LED - Fita</td>
+                    <td></td>
+                </tr>
+                  
+                <tr> <!--Neste caso, a tr vai criar uma célula de dados-->
+                    <td>Xiaomi</td> <!--A tag td representa os dados da tabela-->
+                    <td>Xiaomi</td>
+                    <td>VGA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                    
+                <tr> <!--Neste caso, a tr vai criar uma célula de dados-->
+                    <td>ZenFone (Azus)</td> <!--A tag td representa os dados da tabela-->
+                    <td>ZenFone (Azus)</td>
+                    <td>Internet</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </tbody>    
+                
+        </table>
+
+        <a target="_blank" href="https://shopee.com.br/shop/319417869/">Conheça os nossos Produtos</a> 
+    
+        <!--A tag a significa ancorar (disponibilizar na página) o link que deverá ser 
+        redirecionado para um destino, redirecionamento este utilizado pelo atributo href que deve ser colocada
+        dentro da tag a. Para que o link seja aberto em uma nova guia automaticamente, deve-se usar a target 
+        dentro da tag a-->
+
+        <a target="_blank" href="https://shopee.com.br/shop/319417869/">
+            <p>
+                <img src="C:/Users/user/Downloads/LOGO.jpg" width="300" alt="Página Iincial">
+            </p>    
+
+        </a>
+
+        <!--Para que uma imagem vire link, basta colocar a imagem tantro da tag a com o atributo img src-->
+        <a href="#Inicio">Voltar ao Início da Página</a>
+
+        <p class="explicacao">Temos as seguintes redes sociais: Instagram, <span class="red">Tik</span><span class="green">Tok</span>, 
+            <span class="red">YouTube</span>, <span class="blue">Facebook</span> , <span class="blue">LinkedIn</span>, 
+            e <span class="blue">Telegram</span>. <br> Estamos usando este parágrafo para entrarmos em um novo conceito 
+            dentro  da linuagem html, o qual <br> só pode ser usando com o CSS já aplicado ao HTML, uma vez que sem o uso 
+            pré determinado do css essa aplicação não seria possível, pois não haveriam regras onde essas novas<br> 
+            formatações pudessem ser aplicadas.
+        </p>
+
+        <p class="redes explicacao" id="texto_final">Fique à vontade para conhecer nossas redes sociais e ficar um pouco por dentro das nossas
+             promoções e ofertas!!! Assine também a nossa newsletter e fique por dentro das nossas promoções relâmpago!!!
+             Siga-nos em nossas redes soiais para ficar por dentro das novidades!!!
+             <a href="youtube.com/user/jorge.bark"></a>
+        </p>
+        
+        <a target="_blank" href="Entre">Entre</a>
+
+        <div class="Botao_inscricao">
+            <a href="" class="botao inscricao">Faça a sua inscrição</a>
+        </div>
+        
+    
+        Cadastro Pessoa Física (PF)
+
+        <ul class="lista usuario">
+            <li>Nome*</li>
+            <li>CPF*</li>
+            <li>Endereço*</li>
+            <li>E-mail*</li>
+            <li>Telefone Residencial</li>
+            <li>Whatsapp</li>
+            <li>Campos marcados com * são campos de preenchimento obrigatório</li>
+        </ul>
+
+        <!--Quando houver uma classe com um nome, pode-se criar outra classe com o mesmo nome + complemento e aplicar 
+        apenas o complemento na regra css para que apenas os itens com o complemento selecionado entrem nas regras de 
+        formatação do css. Entender o complemento como uma espécie de sobrenome.-->
+            <p>Cadastro Pessoa Jurídica (PJ)</p>
+        <ul class="lista usuario">  
+            <li>Nome Fantasia*</li>
+            <li>Razão Social*</li>
+            <li>CPF*</li>
+            <li>CNPJ*</li>
+            <li>IE</li>
+            <li>Endereço Comercial</li>
+            <li>E-mail*</li>
+            <li>Telefone Comercial*</li>
+            <li>Telefone Residencial</li>
+            <li>Whatsapp*</li>
+        </ul>
+
+
+</html>
